@@ -892,6 +892,11 @@ elsif (get_var("FEATURE")) {
 elsif (get_var("MEDIACHECK")) {
     loadtest "installation/mediacheck.pm";
 }
+elsif (get_var("FIREFOXTEST")) {
+    prepare_target();
+    loadtest("gnome_terminal_sample_test.pm");
+    loadtest("firefox_sample_test.pm");
+}
 elsif (get_var("MEMTEST")) {
     if (!get_var("OFW")) {    #no memtest on PPC
         loadtest "installation/memtest.pm";
